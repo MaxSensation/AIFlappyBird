@@ -16,7 +16,7 @@ namespace Game
         private float _gapSize;
         private float _lastSpawnedTime;
         private int _totalSpawnedPipes;
-        private List<GameObject> _pipes = new List<GameObject>();
+        private readonly List<GameObject> _pipes = new List<GameObject>();
 
         private void Start()
         {
