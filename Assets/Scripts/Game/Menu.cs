@@ -11,20 +11,19 @@ namespace Game
         [SerializeField] private GameObject playGameUIButton;
         [SerializeField] private GameObject gameOverTextUI;
         [SerializeField] private TextMeshProUGUI scoreUI;
+        [SerializeField] private int totalBirds;
 
         private static bool _isGameOver;
         private static int _currentScore;
         private void Start()
         {
-            Bird.OnBirdDiedEvent += GameOver;
-            Pipe.OnBirdScored += AddScore;
+            //Bird.OnBirdDiedEvent += GameOver;
+            MLAgentBird.OnBirdScored += AddScore;
         }
 
-        private void AddScore()
+        private void AddScore(int score)
         {
-            if (_isGameOver) return;
-            _currentScore++;
-            scoreUI.SetText(_currentScore.ToString());
+            scoreUI.SetText(score.ToString());
         }
 
         private void GameOver()
@@ -46,7 +45,20 @@ namespace Game
             _isGameOver = false;
             gameOverTextUI.SetActive(false);
             pipeGenerator.Clear();
-            Instantiate(birdPrefab);
+            SpawnBirds(totalBirds);
+        }
+
+        public int GetTotalBirds()
+        {
+            return totalBirds;
+        }
+
+        private void SpawnBirds(int i)
+        {
+            for (var j = 0; j < i; j++)
+            {
+                Instantiate(birdPrefab);
+            }
         }
     }
 }

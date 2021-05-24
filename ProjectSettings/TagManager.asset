@@ -5,11 +5,13 @@ TagManager:
   serializedVersion: 2
   tags:
   - Pipe
+  - BetweenPipes
+  - PipGenerator
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Bird
   - Water
   - UI
   - 

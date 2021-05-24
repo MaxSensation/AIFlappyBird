@@ -334,11 +334,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4a126d7f777472a9497b9fcafd6ed77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  birdPrefab: {fileID: 4631137708686946724, guid: d4dac72083254e545915240bb9487cf3, type: 3}
+  birdPrefab: {fileID: 2416317558673567132, guid: 020b3a9f04dcc8c429299b301f82b929, type: 3}
   pipeGenerator: {fileID: 654082099}
   playGameUIButton: {fileID: 2081609761}
   gameOverTextUI: {fileID: 1089184299}
   scoreUI: {fileID: 842678601}
+  totalBirds: 10
 --- !u!114 &717921682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1180,6 +1181,26 @@ PrefabInstance:
     - target: {fileID: 5202415800842747770, guid: f2ddf5e44dc8936459063a31c038127e, type: 3}
       propertyPath: m_Name
       value: PipeGenerator
+      objectReference: {fileID: 0}
+    - target: {fileID: 5202415800842747771, guid: f2ddf5e44dc8936459063a31c038127e, type: 3}
+      propertyPath: maxGapSize
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5202415800842747771, guid: f2ddf5e44dc8936459063a31c038127e, type: 3}
+      propertyPath: minGapSize
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5202415800842747771, guid: f2ddf5e44dc8936459063a31c038127e, type: 3}
+      propertyPath: spawnFrequency
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5202415800842747771, guid: f2ddf5e44dc8936459063a31c038127e, type: 3}
+      propertyPath: gapReductionSize
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5202415800842747771, guid: f2ddf5e44dc8936459063a31c038127e, type: 3}
+      propertyPath: pipesBetweenEachGapReduction
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5202415800842747772, guid: f2ddf5e44dc8936459063a31c038127e, type: 3}
       propertyPath: m_RootOrder
