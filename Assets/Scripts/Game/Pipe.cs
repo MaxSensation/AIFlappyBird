@@ -7,13 +7,19 @@ namespace Game
     public class Pipe : MonoBehaviour
     {
         public static Action<GameObject> OnOutsideBonceEvent;
+        // Upper pipe
         [SerializeField] private GameObject upperPipe;
+        // Gap between pipes
         [SerializeField] private GameObject inBetweenPipes;
+        // Lower pipe
         [SerializeField] private GameObject lowerPipe;
+        // Distance from screen edges (top & bottom)
         [SerializeField] private float padding;
+        // Pipe width
         [SerializeField] private float pipeWidth;
+        // Pipe speed
         [SerializeField] private float speed;
-        
+        // Lower left corner of screen
         private Vector2 _downLeftCorner;
         private float _screenHeight;
         private float _gapSize;
