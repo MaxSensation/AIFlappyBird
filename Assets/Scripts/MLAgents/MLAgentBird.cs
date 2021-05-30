@@ -39,7 +39,9 @@ public class MLAgentBird : Agent
     public override void CollectObservations(VectorSensor sensor)
     {
         if (_isDead) return;
+        // Birds position
         sensor.AddObservation(transform.position);
+        // Birds velocity
         sensor.AddObservation(_rigidbody2D.velocity);
         if (!_pipeGenerator.IsEmpty())
         {
@@ -103,6 +105,7 @@ public class MLAgentBird : Agent
     private void Die()
     {
         if (_isDead) return;
+        AddReward(-5);
         AddReward(Time.time - _totalTimeAlive);
         _totalBirdsDied++;
         _isDead = true;
@@ -136,7 +139,6 @@ public class MLAgentBird : Agent
         if (_isDead) return;   
         if (transform.position.y <= _screenLowerLeftCorner.y || transform.position.y >= -_screenLowerLeftCorner.y)
         {
-            AddReward(-5);
             Die();
         }
     }
