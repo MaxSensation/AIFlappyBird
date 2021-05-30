@@ -86,8 +86,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4631137708686946729, guid: d4dac72083254e545915240bb9487cf3, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4631137708686946729, guid: d4dac72083254e545915240bb9487cf3, type: 3}
       propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 7424846492731917698}
+    - target: {fileID: 4631137708686946729, guid: d4dac72083254e545915240bb9487cf3, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Jump
+      objectReference: {fileID: 0}
+    - target: {fileID: 4631137708686946729, guid: d4dac72083254e545915240bb9487cf3, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MLAgentBird, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4631137708686946730, guid: d4dac72083254e545915240bb9487cf3, type: 3}
       propertyPath: m_RootOrder
@@ -135,7 +147,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4631137708686946728, guid: d4dac72083254e545915240bb9487cf3, type: 3}
-    - {fileID: 4631137708686946729, guid: d4dac72083254e545915240bb9487cf3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d4dac72083254e545915240bb9487cf3, type: 3}
 --- !u!1 &2416317558673567132 stripped
 GameObject:
