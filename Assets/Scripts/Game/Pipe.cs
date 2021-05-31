@@ -57,9 +57,9 @@ namespace Game
 
         public Vector2 GetUpperPipePosition()
         {
-            return new Vector2(upperPipe.transform.position.x,upperPipe.transform.position.y - upperPipe.transform.localScale.y/2);
+	        return new Vector2(upperPipe.transform.position.x,upperPipe.transform.position.y - upperPipe.transform.localScale.y/2);
         }
-        
+
         public Vector2 GetInBetweenPipesPosition()
         {
             return inBetweenPipes.transform.position;

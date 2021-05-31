@@ -14,7 +14,10 @@ public class MLAgentBird : Agent
     [SerializeField] private bool resetScoreForEachTry;
     
     private static int _currentHighScore;
+    
     private Rigidbody2D _rigidbody2D;
+    private Vector2 _oldVelocity;
+    
     private Vector2 _screenLowerLeftCorner;
     
     private static int _totalBirdsDied;
@@ -32,10 +35,12 @@ public class MLAgentBird : Agent
         _totalBirds = _menu.GetTotalBirds();
         _pipeGenerator = FindObjectOfType<PipeGenerator>();
         _rigidbody2D = GetComponent<Rigidbody2D>();
+        _oldVelocity = _rigidbody2D.velocity;
         _screenLowerLeftCorner = Camera.main.ScreenToWorldPoint(Vector3.zero);
         OnAllBirdDied += EndEpisode;
     }
 
+    ///* Maximiliam config
     public override void CollectObservations(VectorSensor sensor)
     {
         if (_isDead) return;
@@ -43,6 +48,8 @@ public class MLAgentBird : Agent
         sensor.AddObservation(transform.position);
         // Birds velocity
         sensor.AddObservation(_rigidbody2D.velocity);
+        // Birds acceleration
+        //sensor.AddObservation(GetAcceleration());
         if (!_pipeGenerator.IsEmpty())
         {
             var closestPipe = _pipeGenerator.GetClosestPipe().GetComponent<Pipe>();
@@ -65,7 +72,41 @@ public class MLAgentBird : Agent
                 sensor.AddObservation(secoundClosestPipe.GetWidth());
             }
         }
-    }
+    }//*/
+    
+    /* Viktor config
+    public override void CollectObservations(VectorSensor sensor)
+    {
+	    if (_isDead) return;
+	    // Birds position
+	    sensor.AddObservation(transform.position);
+	    // Birds velocity
+	    sensor.AddObservation(_rigidbody2D.velocity);
+	    // Birds acceleration
+	    sensor.AddObservation(GetAcceleration());
+	    if (!_pipeGenerator.IsEmpty())
+	    {
+		    var closestPipe = _pipeGenerator.GetClosestPipe().GetComponent<Pipe>();
+		    sensor.AddObservation(closestPipe.GetUpperPipePosition());
+		    sensor.AddObservation(closestPipe.GetLowerPipePosition());
+		    sensor.AddObservation(closestPipe.GetInBetweenPipesPosition());
+		    //sensor.AddObservation(closestPipe.GetGapSize());
+		    //sensor.AddObservation(closestPipe.GetPadding());
+		    sensor.AddObservation(closestPipe.GetSpeed());
+		    sensor.AddObservation(closestPipe.GetWidth());
+		    if (_pipeGenerator.hasTwoPipes())
+		    {
+			    var secoundClosestPipe = _pipeGenerator.GetSecoundClosestPipe().GetComponent<Pipe>();
+			    sensor.AddObservation(secoundClosestPipe.GetUpperPipePosition());
+			    sensor.AddObservation(secoundClosestPipe.GetLowerPipePosition());
+			    sensor.AddObservation(secoundClosestPipe.GetInBetweenPipesPosition());
+			    //sensor.AddObservation(secoundClosestPipe.GetGapSize());
+			    //sensor.AddObservation(secoundClosestPipe.GetPadding());
+			    sensor.AddObservation(secoundClosestPipe.GetSpeed());
+			    sensor.AddObservation(secoundClosestPipe.GetWidth());
+		    }
+	    }
+    }*/
 
     public override void OnActionReceived(ActionBuffers actions)
     {
@@ -116,6 +157,14 @@ public class MLAgentBird : Agent
             _pipeGenerator.Clear();
             _totalBirdsDied = 0;
         }
+    }
+
+    private Vector2 GetAcceleration()
+    {
+	    var velocity = _rigidbody2D.velocity;
+	    var tmp = (velocity - _oldVelocity) / Time.fixedDeltaTime;
+	    _oldVelocity = velocity;
+	    return tmp;
     }
 
     public override void OnEpisodeBegin()
