@@ -10,7 +10,7 @@ namespace Game
     public class Pipe : MonoBehaviour
     {
         // Out of bounds Event
-        public static Action<GameObject> OnOutsideBonceEvent;
+        public static Action<GameObject> OnOutsideBounceEvent;
         // Upper pipe
         [SerializeField] private GameObject upperPipe;
         // Gap between pipes
@@ -18,7 +18,7 @@ namespace Game
         // Lower pipe
         [SerializeField] private GameObject lowerPipe;
         // Distance from screen edges (top & bottom)
-        [SerializeField] private float padding;
+        [SerializeField] private float distanceFromScreenEdges;
         // Pipe width
         [SerializeField] private float pipeWidth;
         // Pipe speed
@@ -35,7 +35,7 @@ namespace Game
             // Moves the pipe towards the bird
             transform.position = new Vector2(transform.position.x - speed * Time.deltaTime, transform.position.y);
             // Triggers out of bounds event if pipes are outside of screen
-            if (transform.position.x < _downLeftCorner.x - pipeWidth/2) OnOutsideBonceEvent?.Invoke(gameObject);
+            if (transform.position.x < _downLeftCorner.x - pipeWidth/2) OnOutsideBounceEvent?.Invoke(gameObject);
         }
 
         public void Init(float gapSize)
@@ -53,9 +53,9 @@ namespace Game
             // Get the totalPipeHeight
             var totalPipeHeight = _screenHeight - gapSize;
             // If totalPipeHeight is less than distance from screen edges * 2 then set totalPipeHeight to 
-            if (totalPipeHeight < padding * 2) totalPipeHeight = padding * 2;
+            if (totalPipeHeight < distanceFromScreenEdges * 2) totalPipeHeight = distanceFromScreenEdges * 2;
             // set the upperPipeHeight
-            var upperPipeHeight = Random.Range(padding, totalPipeHeight - padding);
+            var upperPipeHeight = Random.Range(distanceFromScreenEdges, totalPipeHeight - distanceFromScreenEdges);
             // Set lowerPipeHeight
             var lowerPipeHeight = totalPipeHeight - upperPipeHeight;
             // Sets upper pipe scale
@@ -107,7 +107,7 @@ namespace Game
         // Gets distance from screen edges (top & bottom)
         public float GetPadding()
         {
-            return padding;
+            return distanceFromScreenEdges;
         }
         // Gets the speed of the pipe
         public float GetSpeed()

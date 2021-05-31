@@ -159,7 +159,7 @@ MonoBehaviour:
   upperPipe: {fileID: 8618113374376662790}
   inBetweenPipes: {fileID: 6363945308939709234}
   lowerPipe: {fileID: 8618113376080474825}
-  padding: 0.5
+  distanceFromScreenEdges: 0.5
   pipeWidth: 0.8
   speed: 5
 --- !u!1 &8618113374376662790

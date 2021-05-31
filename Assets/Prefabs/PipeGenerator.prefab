@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pipePrefab: {fileID: 8618113374261370380, guid: dd91f4fe8d0ed7c4f927e636a38051fa, type: 3}
   spawnFrequency: 1
-  maxGapSize: 6
+  startGapSize: 7
   minGapSize: 2
   pipesBetweenEachGapReduction: 2
   gapReductionSize: 0.2
