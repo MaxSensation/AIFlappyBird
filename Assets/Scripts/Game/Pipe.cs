@@ -7,6 +7,9 @@ using Random = UnityEngine.Random;
 
 namespace Game
 {
+    /// <summary>
+    /// The pipe class
+    /// </summary>
     public class Pipe : MonoBehaviour
     {
         // Out of bounds Event

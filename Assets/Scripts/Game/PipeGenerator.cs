@@ -8,6 +8,9 @@ using UnityEngine;
 
 namespace Game
 {
+    /// <summary>
+    /// A class for generating the pipes
+    /// </summary>
     public class PipeGenerator : MonoBehaviour
     {    
         // Clear all pipes event
