@@ -62,7 +62,7 @@ public class MLAgentBird : Agent
             sensor.AddObservation(closestPipe.GetWidth());
             if (_pipeGenerator.hasTwoPipes())
             {
-                var secoundClosestPipe = _pipeGenerator.GetSecoundClosestPipe().GetComponent<Pipe>();
+                var secoundClosestPipe = _pipeGenerator.GetSecondClosestPipe().GetComponent<Pipe>();
                 sensor.AddObservation(secoundClosestPipe.GetUpperPipePosition());
                 sensor.AddObservation(secoundClosestPipe.GetLowerPipePosition());
                 sensor.AddObservation(secoundClosestPipe.GetInBetweenPipesPosition());

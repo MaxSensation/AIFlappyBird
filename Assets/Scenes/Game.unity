@@ -1191,6 +1191,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5202415800842747771, guid: f2ddf5e44dc8936459063a31c038127e, type: 3}
+      propertyPath: startGapSize
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5202415800842747771, guid: f2ddf5e44dc8936459063a31c038127e, type: 3}
       propertyPath: spawnFrequency
       value: 1
       objectReference: {fileID: 0}
