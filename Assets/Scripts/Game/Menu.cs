@@ -12,13 +12,22 @@ namespace Game
     /// </summary>
     public class Menu : MonoBehaviour
     {
-        [SerializeField] private GameObject birdPrefab;
+        [SerializeField] private bool recording;
+        [SerializeField] private bool manualMode;
+        [SerializeField] private bool trainingMode;
+        [SerializeField] private GameObject manualBirdPrefab;
+        [SerializeField] private GameObject recordingBirdPrefab;
+        [SerializeField] private GameObject trainingBirdPrefab;
+        [SerializeField] private GameObject reinforcementBirdPrefab;
+        [SerializeField] private GameObject imitationBirdPrefab;
         [SerializeField] private PipeGenerator pipeGenerator;
         [SerializeField] private GameObject playGameUIButton;
         [SerializeField] private GameObject gameOverTextUI;
         [SerializeField] private TextMeshProUGUI scoreUI;
-        [SerializeField] private int totalBirds;
-
+        [SerializeField] private int totalTrainingBirds;
+        
+        private int _totalBirds;
+        
         private static bool _isGameOver;
         private static int _currentScore;
         // Registers listening to event onBirdScored to know when to add score
@@ -52,19 +61,34 @@ namespace Game
             _isGameOver = false;
             gameOverTextUI.SetActive(false);
             pipeGenerator.Clear();
-            SpawnBirds(totalBirds);
+            SpawnBirds(totalTrainingBirds);
         }
         // Get the amount of birds
         public int GetTotalBirds()
         {
-            return totalBirds;
+            return _totalBirds;
         }
         // Spawns 'i' amount of birds
         private void SpawnBirds(int i)
         {
-            for (var j = 0; j < i; j++)
+            if (!manualMode)
             {
-                Instantiate(birdPrefab);
+                if(trainingMode)
+                    for (var j = 0; j < i; j++)
+                    {
+                        Instantiate(trainingBirdPrefab);
+                        _totalBirds++;
+                    }
+                else{
+                    Instantiate(reinforcementBirdPrefab);
+                    Instantiate(imitationBirdPrefab);
+                    _totalBirds += 2;
+                }
+            }
+            else
+            {
+                Instantiate(recording ? recordingBirdPrefab : manualBirdPrefab);
+                _totalBirds++;
             }
         }
     }

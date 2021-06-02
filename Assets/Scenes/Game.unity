@@ -231,7 +231,6 @@ GameObject:
   - component: {fileID: 717921677}
   - component: {fileID: 717921681}
   - component: {fileID: 717921682}
-  - component: {fileID: 717921683}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -335,12 +334,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4a126d7f777472a9497b9fcafd6ed77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  birdPrefab: {fileID: 2416317558673567132, guid: 020b3a9f04dcc8c429299b301f82b929, type: 3}
+  recording: 0
+  manualMode: 0
+  trainingMode: 0
+  manualBirdPrefab: {fileID: 5699460118985848955, guid: f166073893f587e4db9ff25c0a922d56, type: 3}
+  recordingBirdPrefab: {fileID: 4924897092766235203, guid: 66bad663114854d469935248ffd24113, type: 3}
+  trainingBirdPrefab: {fileID: 2416317558673567132, guid: 020b3a9f04dcc8c429299b301f82b929, type: 3}
+  reinforcementBirdPrefab: {fileID: 4924897092766235203, guid: 66bad663114854d469935248ffd24113, type: 3}
+  imitationBirdPrefab: {fileID: 4924897092766235203, guid: 8fa09a64d78658845842e0f9c84e0ee3, type: 3}
   pipeGenerator: {fileID: 654082099}
   playGameUIButton: {fileID: 2081609761}
   gameOverTextUI: {fileID: 1089184299}
   scoreUI: {fileID: 842678601}
-  totalBirds: 10
+  totalTrainingBirds: 10
 --- !u!114 &717921682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -427,20 +433,6 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &717921683
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 717921676}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03479dcc2705b6e47aaf554bd9171d44, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slowMove: 1
-  slowMoveSpeed: 0.7
 --- !u!1 &842678599
 GameObject:
   m_ObjectHideFlags: 0
