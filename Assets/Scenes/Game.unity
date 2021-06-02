@@ -339,7 +339,7 @@ MonoBehaviour:
   playGameUIButton: {fileID: 2081609761}
   gameOverTextUI: {fileID: 1089184299}
   scoreUI: {fileID: 842678601}
-  totalBirds: 10
+  totalBirds: 1
 --- !u!114 &717921682
 MonoBehaviour:
   m_ObjectHideFlags: 0
