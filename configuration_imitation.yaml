@@ -19,11 +19,8 @@ behaviors:
         strength: 1.0
         gamma: 0.99        
       gail:
-        strength: 0.5
-        demo_path: Assets/Recordings/Point82.demo
-    behavioral_cloning:
-      strength: 0.5
-      demo_path: Assets/Recordings/Point82.demo      
-    max_steps: 50000000
+        strength: 1
+        demo_path: Recordings/Demo.demo
+    max_steps: 2000000
     time_horizon: 64
     summary_freq: 20000
