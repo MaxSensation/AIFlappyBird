@@ -340,7 +340,7 @@ MonoBehaviour:
   playGameUIButton: {fileID: 2081609761}
   gameOverTextUI: {fileID: 1089184299}
   scoreUI: {fileID: 842678601}
-  totalBirds: 1
+  totalBirds: 10
 --- !u!114 &717921682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -434,12 +434,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 717921676}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 03479dcc2705b6e47aaf554bd9171d44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slowMove: 0
+  slowMove: 1
   slowMoveSpeed: 0.7
 --- !u!1 &842678599
 GameObject:
