@@ -16,6 +16,92 @@ MonoBehaviour:
   NumStepsToRecord: 0
   DemonstrationName: Demo
   DemonstrationDirectory: Recordings
+--- !u!114 &-4692656753996601801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4924897092766235203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 346b4d1c9af4f594eb787e613a3b4320, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 205645368782672477}
+        m_TargetAssemblyTypeName: MLAgentBird, Assembly-CSharp
+        m_MethodName: Jump
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 6c30a447-0e79-4545-b5f4-068e413202bc
+    m_ActionName: Player/Jump[/Mouse/leftButton,/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7339d88f-15cb-4c61-86aa-5224e8c78df3
+    m_ActionName: UI/Navigate[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2a8b06db-0f55-4f9b-b0c6-9f31a4b87ad0
+    m_ActionName: UI/Submit[/Keyboard/enter]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 5f0f86eb-0ef6-40fd-859d-f3ed77b39c46
+    m_ActionName: UI/Cancel[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6977901d-c95f-494c-9128-3ad3fa8febe2
+    m_ActionName: UI/Point[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 253dc336-bc26-45c8-9cad-26ce445d75bd
+    m_ActionName: UI/Click[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 64952173-0aa1-493d-95df-9b207eecb4c2
+    m_ActionName: UI/ScrollWheel[/Mouse/scroll]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 28e2f572-7b05-4d9d-93c1-94a73adf7389
+    m_ActionName: UI/MiddleClick[/Mouse/middleButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1c00f38c-e621-4039-8d17-7e2296215a7c
+    m_ActionName: UI/RightClick[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 5c20e81d-b106-47ce-91bd-e5be8eb4e17a
+    m_ActionName: UI/TrackedDevicePosition
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: d14568bb-8375-455c-a2ad-e1c02cd850f1
+    m_ActionName: UI/TrackedDeviceOrientation
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1001 &7336579110382704607
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -86,3 +172,14 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2416317558673567132, guid: 020b3a9f04dcc8c429299b301f82b929, type: 3}
   m_PrefabInstance: {fileID: 7336579110382704607}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &205645368782672477 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7424846492731917698, guid: 020b3a9f04dcc8c429299b301f82b929, type: 3}
+  m_PrefabInstance: {fileID: 7336579110382704607}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4924897092766235203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a185b3d6bbea3e846a9c8e2ebd45c6a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

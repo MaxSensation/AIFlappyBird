@@ -19,7 +19,7 @@ behaviors:
         strength: 1.0
         gamma: 0.99        
       gail:
-        strength: 1
+        strength: 0.5
         demo_path: Recordings/Demo.demo
     max_steps: 2000000
     time_horizon: 64
