@@ -63,74 +63,37 @@ public class MLAgentBird : Agent
         // Register that on all bird died end episode
         OnAllBirdDied += EndEpisode;
     }
-
-    ///* Maximiliam config
-    public override void CollectObservations(VectorSensor sensor)
-    {
-        if (_isDead) return;
-        // Birds position
-        sensor.AddObservation(transform.position);
-        // Birds velocity
-        sensor.AddObservation(_rigidbody2D.velocity);
-        // Birds acceleration
-        //sensor.AddObservation(GetAcceleration());
-        if (!_pipeGenerator.IsEmpty())
-        {
-            var closestPipe = _pipeGenerator.GetClosestPipe().GetComponent<Pipe>();
-            sensor.AddObservation(closestPipe.GetUpperPipePosition());
-            sensor.AddObservation(closestPipe.GetLowerPipePosition());
-            sensor.AddObservation(closestPipe.GetInBetweenPipesPosition());
-            sensor.AddObservation(closestPipe.GetGapSize());
-            sensor.AddObservation(closestPipe.GetPadding());
-            sensor.AddObservation(closestPipe.GetSpeed());
-            sensor.AddObservation(closestPipe.GetWidth());
-            if (_pipeGenerator.hasTwoPipes())
-            {
-                var secoundClosestPipe = _pipeGenerator.GetSecondClosestPipe().GetComponent<Pipe>();
-                sensor.AddObservation(secoundClosestPipe.GetUpperPipePosition());
-                sensor.AddObservation(secoundClosestPipe.GetLowerPipePosition());
-                sensor.AddObservation(secoundClosestPipe.GetInBetweenPipesPosition());
-                sensor.AddObservation(secoundClosestPipe.GetGapSize());
-                sensor.AddObservation(secoundClosestPipe.GetPadding());
-                sensor.AddObservation(secoundClosestPipe.GetSpeed());
-                sensor.AddObservation(secoundClosestPipe.GetWidth());
-            }
-        }
-    }//*/
     
-    /* Viktor config
     public override void CollectObservations(VectorSensor sensor)
     {
 	    if (_isDead) return;
-	    // Birds position
+	    // Bird position
 	    sensor.AddObservation(transform.position);
-	    // Birds velocity
+	    // Bird velocity
 	    sensor.AddObservation(_rigidbody2D.velocity);
-	    // Birds acceleration
+	    // Bird acceleration
 	    sensor.AddObservation(GetAcceleration());
+	    
 	    if (!_pipeGenerator.IsEmpty())
 	    {
 		    var closestPipe = _pipeGenerator.GetClosestPipe().GetComponent<Pipe>();
 		    sensor.AddObservation(closestPipe.GetUpperPipePosition());
 		    sensor.AddObservation(closestPipe.GetLowerPipePosition());
 		    sensor.AddObservation(closestPipe.GetInBetweenPipesPosition());
-		    //sensor.AddObservation(closestPipe.GetGapSize());
-		    //sensor.AddObservation(closestPipe.GetPadding());
 		    sensor.AddObservation(closestPipe.GetSpeed());
 		    sensor.AddObservation(closestPipe.GetWidth());
 		    if (_pipeGenerator.hasTwoPipes())
 		    {
-			    var secoundClosestPipe = _pipeGenerator.GetSecoundClosestPipe().GetComponent<Pipe>();
-			    sensor.AddObservation(secoundClosestPipe.GetUpperPipePosition());
-			    sensor.AddObservation(secoundClosestPipe.GetLowerPipePosition());
-			    sensor.AddObservation(secoundClosestPipe.GetInBetweenPipesPosition());
-			    //sensor.AddObservation(secoundClosestPipe.GetGapSize());
-			    //sensor.AddObservation(secoundClosestPipe.GetPadding());
-			    sensor.AddObservation(secoundClosestPipe.GetSpeed());
-			    sensor.AddObservation(secoundClosestPipe.GetWidth());
+			    var secondClosestPipe = _pipeGenerator.GetSecondClosestPipe().GetComponent<Pipe>();
+			    sensor.AddObservation(secondClosestPipe.GetUpperPipePosition());
+			    sensor.AddObservation(secondClosestPipe.GetLowerPipePosition());
+			    sensor.AddObservation(secondClosestPipe.GetInBetweenPipesPosition());
+			    sensor.AddObservation(secondClosestPipe.GetSpeed());
+			    sensor.AddObservation(secondClosestPipe.GetWidth());
 		    }
 	    }
-    }*/
+    }
+    
     // If not dead and recieved action do jump
     public override void OnActionReceived(ActionBuffers actions)
     {
