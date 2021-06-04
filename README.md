@@ -18,8 +18,9 @@ All system requirements can also be found on the same site as previously mention
 2. Download the unity editor 2021.1.4f1: https://unity3d.com/get-unity/download/archive
 3. Press the installation file to start installing, for help with installation visit https://store.unity.com/download-nuo
 4. Open up up unity editor 2021.1.4f1 and select the project AIFlappyBird
-5. Press the small arrow in the top center of the screen or press ctrl + p
-6. Then press the play button in the game window
+5. Click on the scenes folder in the assests map then double click the Game scene
+6. Press the small arrow in the top center of the screen or press ctrl + p
+7. Then press the play button in the game window
 
 ## How to run Unity player
 1. Download the Unity player version of the game and unzip the file
